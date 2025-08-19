@@ -1,0 +1,466 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>APA Agencia de Peritos &amp; Avaluadores | Dictámenes Periciales en Bogotá</title>
+  <meta name="description" content="Avalúos y dictámenes periciales con precisión y credibilidad en Bogotá y La Sabana. Cotización gratis y asesoría experta." />
+  <meta name="theme-color" content="#0f172a" />
+  <meta property="og:title" content="Precisión y Credibilidad en Dictámenes Periciales" />
+  <meta property="og:description" content="Tu aliado experto en avalúos y peritajes. Solicita una cotización gratis." />
+  <meta property="og:type" content="website" />
+  <style>
+    :root{
+      --bg: #0b1220;           /* azul noche elegante */
+      --bg-2:#0f172a;
+      --card:#0f1b33;
+      --muted:#91a4c3;
+      --text:#e6ecfb;
+      --text-2:#c9d6f3;
+      --brand:#4f8cff;         /* acento profesional */
+      --brand-2:#7aa6ff;
+      --ok:#22c55e;
+      --maxw: 1140px;
+      --radius: 14px;
+      --shadow: 0 10px 35px rgba(0,0,0,.35);
+      --shadow-soft: 0 8px 24px rgba(0,0,0,.25);
+    }
+    *{box-sizing:border-box}
+    html{scroll-behavior:smooth}
+    body{
+      margin:0; background:
+        radial-gradient(1200px 600px at 80% -10%, #1a2b57 0%, transparent 60%),
+        radial-gradient(900px 500px at -10% 30%, #132345 0%, transparent 60%),
+        linear-gradient(180deg, var(--bg) 0%, var(--bg-2) 100%);
+      color:var(--text); font: 16px/1.5 system-ui, -apple-system, Segoe UI, Roboto, Inter, Arial, sans-serif;
+    }
+    a{color:inherit; text-decoration:none}
+    .wrap{max-width:var(--maxw); margin:0 auto; padding:0 20px}
+    .btn{
+      display:inline-block; padding:12px 18px; border-radius:10px; font-weight:700;
+      background:linear-gradient(180deg,var(--brand),var(--brand-2));
+      color:#041024; box-shadow: var(--shadow-soft); transform:translateY(0);
+      transition:.2s ease; letter-spacing:.2px
+    }
+    .btn:hover{transform:translateY(-1px); filter:brightness(1.05)}
+    .btn.outline{
+      background:transparent; color:var(--text); border:1px solid #314264;
+      box-shadow:none
+    }
+
+    /* Header */
+    header{
+      position:sticky; top:0; z-index:50;
+      backdrop-filter: saturate(180%) blur(10px);
+      background: rgba(10,16,28,.7);
+      border-bottom:1px solid rgba(255,255,255,.06)
+    }
+    .nav{
+      display:flex; align-items:center; justify-content:space-between; padding:14px 0;
+    }
+    .brand{
+      display:flex; align-items:center; gap:10px; font-weight:800; letter-spacing:.3px
+    }
+    .brand-badge{
+      width:36px; height:36px; border-radius:9px;
+      background:linear-gradient(160deg,#7aa6ff 0%, #3f78ff 60%, #1f49ff 100%);
+      display:grid; place-items:center; box-shadow: var(--shadow);
+    }
+    .brand-badge svg{width:20px; height:20px; fill:#041024}
+    nav ul{display:flex; gap:20px; list-style:none; margin:0; padding:0}
+    nav a{color:var(--text-2); font-weight:600; opacity:.9}
+    nav a:hover{opacity:1}
+    .nav-cta{display:flex; gap:10px; align-items:center}
+
+    /* Hero */
+    .hero{padding:72px 0 40px}
+    .hero-grid{display:grid; grid-template-columns: 1.2fr .8fr; gap:30px; align-items:center}
+    .eyebrow{
+      display:inline-flex; align-items:center; gap:8px; color:var(--muted);
+      font-weight:700; letter-spacing:.28px; text-transform:uppercase; font-size:.8rem
+    }
+    .hero h1{font-size: clamp(28px, 5vw, 44px); line-height:1.1; margin:10px 0 14px}
+    .hero p{color:var(--text-2); font-size: clamp(15px, 1.8vw, 18px)}
+    .cta-row{display:flex; gap:12px; margin-top:16px; flex-wrap:wrap}
+    .hero-card{
+      background:linear-gradient(180deg, rgba(255,255,255,.04), rgba(255,255,255,.02));
+      border:1px solid rgba(255,255,255,.08);
+      padding:22px; border-radius:var(--radius); box-shadow:var(--shadow-soft)
+    }
+    .hero-card b{color:#dff2ff}
+
+    /* Sections */
+    section{padding:60px 0}
+    h2{font-size: clamp(22px, 4vw, 32px); line-height:1.2; margin:0 0 8px}
+    .sub{color:var(--muted); margin:0 0 22px}
+
+    /* Grid cards */
+    .grid{display:grid; gap:16px}
+    .grid.cols-3{grid-template-columns: repeat(3, 1fr)}
+    .grid.cols-4{grid-template-columns: repeat(4, 1fr)}
+    @media (max-width: 980px){
+      .hero-grid{grid-template-columns:1fr}
+      .grid.cols-4{grid-template-columns: 1fr 1fr}
+      .grid.cols-3{grid-template-columns: 1fr}
+    }
+    @media (max-width: 560px){
+      .grid.cols-4{grid-template-columns: 1fr}
+    }
+    .card{
+      background: linear-gradient(180deg, rgba(255,255,255,.03), rgba(255,255,255,.01));
+      border:1px solid rgba(255,255,255,.08);
+      padding:20px; border-radius:var(--radius);
+      box-shadow: var(--shadow-soft); height:100%
+    }
+    .card h3{margin:10px 0 6px; font-size:18px}
+    .card p{margin:0; color:var(--text-2)}
+    .icon{
+      width:40px; height:40px; border-radius:10px;
+      display:grid; place-items:center; margin-bottom:8px;
+      background:linear-gradient(160deg, #29406f, #1b2b50)
+    }
+    .icon svg{width:22px; height:22px; fill:#cfe0ff}
+
+    /* Why */
+    .why .point{display:flex; gap:14px; align-items:flex-start}
+    .why .check{
+      width:22px; height:22px; border-radius:6px; background:#143b22;
+      display:grid; place-items:center; flex:0 0 auto; margin-top:2px; border:1px solid #1f6a3a
+    }
+    .why .check svg{width:14px; height:14px; fill:var(--ok)}
+
+    /* Testimonials */
+    .tcard{display:flex; gap:14px}
+    .quote{font-size:15px; color:var(--text-2)}
+    .who{font-weight:700; margin-top:8px; color:#dbe7ff; font-size:14px}
+
+    /* Contact */
+    .contact{
+      background:
+        radial-gradient(700px 400px at 0% 100%, #1b2f5c 0%, transparent 60%),
+        linear-gradient(180deg, #0b1220 0%, #0f172a 100%);
+      border-top:1px solid rgba(255,255,255,.06);
+      border-bottom:1px solid rgba(255,255,255,.06);
+    }
+    form{
+      display:grid; gap:12px; grid-template-columns:1fr 1fr;
+      background:rgba(255,255,255,.03); padding:16px; border-radius:var(--radius);
+      border:1px solid rgba(255,255,255,.08)
+    }
+    form .full{grid-column:1 / -1}
+    label{display:block; font-weight:700; font-size:.9rem; margin-bottom:6px; color:#cfe0ff}
+    input, select, textarea{
+      width:100%; padding:12px 12px; border-radius:10px; border:1px solid #2a3b5f;
+      background:#0a1429; color:var(--text); outline:none
+    }
+    textarea{min-height:120px; resize:vertical}
+    .help{color:var(--muted); font-size:.85rem}
+
+    /* Footer */
+    footer{padding:30px 0; color:var(--muted); font-size:.9rem}
+    .foot{display:flex; align-items:center; justify-content:space-between; gap:16px; flex-wrap:wrap}
+    .mini{opacity:.9}
+
+    /* A11y / motion */
+    @media (prefers-reduced-motion: no-preference) {
+      .card, .hero-card, .btn { transition: transform .2s ease, filter .2s ease }
+      .card:hover{transform: translateY(-2px)}
+    }
+
+    /* Imagenes promocionales */
+    .images {
+      display:flex;
+      flex-wrap:wrap;
+      justify-content:center;
+      gap:20px;
+      margin:40px auto;
+    }
+    .images img {
+      max-width:100%;
+      border-radius:var(--radius);
+      box-shadow:var(--shadow-soft);
+    }
+  </style>
+
+  <!-- Íconos SVG reutilizables -->
+  <svg aria-hidden="true" style="position:absolute;width:0;height:0;overflow:hidden">
+    <defs>
+      <symbol id="ico-gavel" viewBox="0 0 24 24">
+        <path d="M2 21h13v2H2v-2Zm18.9-15.5-2.4-2.4a1 1 0 0 0-1.4 0l-3.8 3.8 3.8 3.8 3.8-3.8a1 1 0 0 0 0-1.4ZM11 7.3 7.3 11l3.8 3.8 3.7-3.7L11 7.3ZM5.6 12.7 2 16.3l5.7 1.4-2.1-2.1 2.1-2.1-2.1-.8Z"/>
+      </symbol>
+      <symbol id="ico-home" viewBox="0 0 24 24">
+        <path d="M12 3 2 12h3v8h6v-5h2v5h6v-8h3L12 3Z"/>
+      </symbol>
+      <symbol id="ico-scale" viewBox="0 0 24 24">
+        <path d="M12 3 7 9h10l-5-6Zm-7 9 4 6H1l4-6Zm14 0 4 6h-8l4-6ZM11 21h2v-3h-2v3Z"/>
+      </symbol>
+      <symbol id="ico-chart" viewBox="0 0 24 24">
+        <path d="M3 3h2v18H3V3Zm4 10h2v8H7v-8Zm4-6h2v14h-2V7Zm4 4h2v10h-2V11Zm4 6h2v4h-2v-4Z"/>
+      </symbol>
+      <symbol id="ico-check" viewBox="0 0 24 24">
+        <path d="M9.5 16.2 4.8 11.5l1.4-1.4 3.3 3.3 8.3-8.3 1.4 1.4-9.7 9.7Z"/>
+      </symbol>
+    </defs>
+  </svg>
+
+  <!-- Schema.org básico (ajusta cuando tengas NIT, URL y contacto reales) -->
+  <script type="application/ld+json">
+  {
+    "@context":"https://schema.org",
+    "@type":"ProfessionalService",
+    "name":"APA Agencia de Peritos &amp; Avaluadores",
+    "description":"Avalúos y dictámenes periciales con validez legal en Bogotá y La Sabana.",
+    "areaServed":"Bogotá, Colombia",
+    "priceRange":"$",
+    "sameAs":[]
+  }
+  </script>
+</head>
+<body>
+
+  <!-- Header -->
+  <header aria-label="Barra de navegación">
+    <div class="wrap nav">
+      <a class="brand" href="#inicio" aria-label="Inicio">
+        <span class="brand-badge" aria-hidden="true">
+          <svg><use href="#ico-scale"></use></svg>
+        </span>
+        <span>APA Agencia de Peritos &amp; Avaluadores</span>
+      </a>
+      <nav aria-label="Principal">
+        <ul>
+          <li><a href="#servicios">Servicios</a></li>
+          <li><a href="#porque">Por qué elegirnos</a></li>
+          <li><a href="#testimonios">Testimonios</a></li>
+          <li><a href="#contacto">Contacto</a></li>
+        </ul>
+      </nav>
+      <div class="nav-cta">
+        <a class="btn outline" href="#contacto">Agenda tu Consulta</a>
+        <a class="btn" href="#contacto">Solicita una Cotización Gratis</a>
+      </div>
+    </div>
+  </header>
+
+  <!-- Hero -->
+  <main id="inicio" class="hero">
+    <div class="wrap hero-grid">
+      <div>
+        <span class="eyebrow">Peritajes con validez legal</span>
+        <h1>Precisión y Credibilidad en Dictámenes Periciales. Tu Aliado Experto en Bogotá.</h1>
+        <p>En APA, convertimos la incertidumbre en seguridad jurídica. Nuestros avalúos y peritajes son la prueba sólida que necesitas para ganar tu caso o proteger tu patrimonio.</p>
+        <div class="cta-row">
+          <a class="btn" href="#contacto" aria-label="Solicitar cotización gratuita">Solicita una Cotización Gratis</a>
+          <a class="btn outline" href="#servicios">Ver Servicios</a>
+        </div>
+        <div class="hero-card" aria-live="polite" style="margin-top:16px">
+          <b>Respuesta en menos de 24 horas*</b><br>
+          <small class="help">*Tiempo de respuesta estimado en horario hábil. Ajusta este texto según tu operación.</small>
+        </div>
+      </div>
+      <div class="hero-card" role="note" aria-label="Resumen de valor">
+        <h3 style="margin:0 0 8px">¿Por qué APA?</h3>
+        <ul class="help" style="margin:0; padding-left:18px">
+          <li>Metodología rigurosa y trazable</li>
+          <li>Informes claros y listos para estrados</li>
+          <li>Experiencia local en Bogotá y La Sabana</li>
+        </ul>
+      </div>
+    </div>
+  </main>
+
+  <!-- Imágenes promocionales -->
+  <section class="images" aria-label="Imágenes de APA">
+    <div class="wrap">
+      <img src="Gemini_Generated_Image_3bldq73bldq73bld.png" alt="Panorama de ciudad con logotipo de APA" loading="lazy" />
+      <img src="Gemini_Generated_Image_sh82ygsh82ygsh82.png" alt="Logotipo de APA con gráfico ascendente" loading="lazy" />
+    </div>
+  </section>
+
+  <!-- Servicios -->
+  <section id="servicios" aria-labelledby="tit-servicios">
+    <div class="wrap">
+      <h2 id="tit-servicios">Servicios de Avalúos y Dictámenes Jurídicos</h2>
+      <p class="sub">Soluciones periciales enfocadas en resultados jurídicos.</p>
+
+      <div class="grid cols-4">
+        <article class="card" aria-label="Dictámenes para Sucesiones">
+          <div class="icon"><svg><use href="#ico-gavel"></use></svg></div>
+          <h3>Dictámenes para Sucesiones</h3>
+          <p>Determina el valor justo de propiedades y bienes para una repartición equitativa, evitando conflictos.</p>
+        </article>
+
+        <article class="card" aria-label="Avalúos para Divorcios">
+          <div class="icon"><svg><use href="#ico-scale"></use></svg></div>
+          <h3>Avalúos para Divorcios</h3>
+          <p>Establece el valor real de los bienes mancomunados, garantizando una liquidación de sociedad conyugal transparente.</p>
+        </article>
+
+        <article class="card" aria-label="Peritaje para Litigios">
+          <div class="icon"><svg><use href="#ico-home"></use></svg></div>
+          <h3>Peritaje para Litigios</h3>
+          <p>Proporcionamos dictámenes sólidos y verificables para juicios de expropiación, remates y daños a la propiedad.</p>
+        </article>
+
+        <article class="card" aria-label="Avalúo Comercial">
+          <div class="icon"><svg><use href="#ico-chart"></use></svg></div>
+          <h3>Avalúo Comercial</h3>
+          <p>Valuamos su propiedad con la máxima precisión, respaldados por datos del mercado, para su compra o venta.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- Por qué elegirnos -->
+  <section id="porque" class="why" aria-labelledby="tit-porque">
+    <div class="wrap">
+      <h2 id="tit-porque">Precisión. Confianza. Estrategia.</h2>
+      <p class="sub">Bases técnicas sólidas y comunicación clara en cada caso.</p>
+
+      <div class="grid cols-3">
+        <div class="card">
+          <div class="point">
+            <div class="check"><svg><use href="#ico-check"></use></svg></div>
+            <div>
+              <h3 style="margin:0 0 6px">Experiencia Verificada</h3>
+              <p>Más de 10 años de experiencia en el mercado de Bogotá y La Sabana, con un historial comprobado de dictámenes aceptados por la justicia colombiana.</p>
+            </div>
+          </div>
+        </div>
+        <div class="card">
+          <div class="point">
+            <div class="check"><svg><use href="#ico-check"></use></svg></div>
+            <div>
+              <h3 style="margin:0 0 6px">Metodología Rigurosa</h3>
+              <p>Nuestra metodología se basa en análisis de datos, regulaciones y condiciones de mercado, garantizando la exactitud de cada informe.</p>
+            </div>
+          </div>
+        </div>
+        <div class="card">
+          <div class="point">
+            <div class="check"><svg><use href="#ico-check"></use></svg></div>
+            <div>
+              <h3 style="margin:0 0 6px">Atención Personalizada</h3>
+              <p>Entendemos que cada caso es único. Ofrecemos comunicación clara y constante, explicando cada etapa del proceso de peritaje.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Testimonios -->
+  <section id="testimonios" aria-labelledby="tit-testimonios">
+    <div class="wrap">
+      <h2 id="tit-testimonios">La voz de nuestros clientes</h2>
+      <p class="sub">Resultados que generan confianza.</p>
+
+      <div class="grid cols-3">
+        <div class="card tcard">
+          <div class="icon" aria-hidden="true"><svg><use href="#ico-gavel"></use></svg></div>
+          <div>
+            <p class="quote">"Gracias a su dictamen, logramos un acuerdo justo en un caso de sucesión familiar. Su profesionalismo es impecable."</p>
+            <div class="who">— Laura G., Abogada</div>
+          </div>
+        </div>
+
+        <div class="card tcard">
+          <div class="icon" aria-hidden="true"><svg><use href="#ico-home"></use></svg></div>
+          <div>
+            <p class="quote">"Estaba muy nerviosa por mi caso de divorcio. El equipo de APA me dio la tranquilidad de saber que el valor de mi casa era el correcto."</p>
+            <div class="who">— Camila R., Cliente</div>
+          </div>
+        </div>
+
+        <div class="card tcard">
+          <div class="icon" aria-hidden="true"><svg><use href="#ico-scale"></use></svg></div>
+          <div>
+            <p class="quote">"El informe fue tan sólido que mi cliente obtuvo el valor justo en su proceso de expropiación. Un aliado invaluable."</p>
+            <div class="who">— Ricardo M., Abogado Litigante</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA Final + Contacto -->
+  <section id="contacto" class="contact" aria-labelledby="tit-cta">
+    <div class="wrap">
+      <h2 id="tit-cta">¿Necesitas un Peritaje o Avalúo con Validez Legal?</h2>
+      <p class="sub">No dejes el valor de tu caso al azar. Contáctanos hoy para una consulta y descubre cómo podemos ayudarte a asegurar tu patrimonio.</p>
+
+      <div class="grid" style="grid-template-columns:1.1fr .9fr; gap:20px">
+        <div class="card">
+          <form method="post" action="mailto:REEMPLAZAR_CON_TU_CORREO" enctype="text/plain" aria-label="Formulario de contacto">
+            <div class="full">
+              <label for="nombre">Nombre y Apellidos</label>
+              <input id="nombre" name="nombre" placeholder="Tu nombre completo" required>
+            </div>
+            <div>
+              <label for="email">Correo electrónico</label>
+              <input id="email" type="email" name="email" placeholder="tucorreo@ejemplo.com" required>
+            </div>
+            <div>
+              <label for="tel">Teléfono</label>
+              <input id="tel" name="telefono" placeholder="300 349 9610">
+            </div>
+            <div class="full">
+              <label for="servicio">Servicio de interés</label>
+              <select id="servicio" name="servicio">
+                <option>Dictamen para Sucesión</option>
+                <option>Avalúo para Divorcio</option>
+                <option>Peritaje para Litigio</option>
+                <option>Avalúo Comercial</option>
+                <option>Otro</option>
+              </select>
+            </div>
+            <div class="full">
+              <label for="mensaje">Mensaje</label>
+              <textarea id="mensaje" name="mensaje" placeholder="Cuéntanos brevemente tu caso"></textarea>
+            </div>
+            <div class="full" style="display:flex; gap:10px; flex-wrap:wrap">
+              <button class="btn" type="submit">Agenda tu Consulta Gratuita</button>
+              <a class="btn outline" href="#inicio">Volver arriba</a>
+            </div>
+            <div class="full">
+              <small class="help">Al enviar, aceptas ser contactad@ para brindarte asesoría. Sustituye el mail del <b>action</b> por tu correo o integra tu CRM.</small>
+            </div>
+          </form>
+        </div>
+
+        <aside class="card">
+          <h3 style="margin:0 0 8px">Información rápida</h3>
+          <ul class="help" style="margin:0 0 10px; padding-left:18px">
+            <li>Cobertura: Bogotá y La Sabana</li>
+            <li>Horarios hábiles de atención</li>
+            <li>Informes con trazabilidad y anexos</li>
+            <li>Teléfono: 300&nbsp;349&nbsp;9610</li>
+          </ul>
+          <a class="btn" href="#contacto">Solicita una Cotización Gratis</a>
+        </aside>
+      </div>
+    </div>
+  </section>
+
+  <footer role="contentinfo">
+    <div class="wrap foot">
+      <div class="mini">© <span id="y"></span> APA Agencia de Peritos &amp; Avaluadores. Todos los derechos reservados.</div>
+      <div class="mini">Bogotá, Colombia</div>
+    </div>
+  </footer>
+
+  <script>
+    // año dinámico
+    document.getElementById('y').textContent = new Date().getFullYear();
+
+    // mejora foco/scroll en anclas para accesibilidad
+    document.querySelectorAll('a[href^="#"]').forEach(a=>{
+      a.addEventListener('click', e=>{
+        const id = a.getAttribute('href').slice(1);
+        const el = document.getElementById(id);
+        if(el){ e.preventDefault(); el.setAttribute('tabindex','-1'); el.focus({preventScroll:true}); el.scrollIntoView({behavior:'smooth', block:'start'}); }
+      });
+    });
+  </script>
+</body>
+</html>
