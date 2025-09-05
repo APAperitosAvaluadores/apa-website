@@ -1,245 +1,25 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>APA Agencia de Peritos &amp; Avaluadores | Dictámenes Periciales en Bogotá</title>
-  <meta name="description" content="Avalúos y dictámenes periciales con precisión y credibilidad en Bogotá y La Sabana. Cotización gratis y asesoría experta." />
-  <meta name="theme-color" content="#0f172a" />
-  <meta property="og:title" content="Precisión y Credibilidad en Dictámenes Periciales" />
-  <meta property="og:description" content="Tu aliado experto en avalúos y peritajes. Solicita una cotización gratis." />
-  <meta property="og:type" content="website" />
-  <style>
-    :root{
-      --bg: #0b1220;           /* azul noche elegante */
-      --bg-2:#0f172a;
-      --card:#0f1b33;
-      --muted:#91a4c3;
-      --text:#e6ecfb;
-      --text-2:#c9d6f3;
-      --brand:#4f8cff;         /* acento profesional */
-      --brand-2:#7aa6ff;
-      --ok:#22c55e;
-      --maxw: 1140px;
-      --radius: 14px;
-      --shadow: 0 10px 35px rgba(0,0,0,.35);
-      --shadow-soft: 0 8px 24px rgba(0,0,0,.25);
-    }
-    *{box-sizing:border-box}
-    html{scroll-behavior:smooth}
-    body{
-      margin:0; background:
-        radial-gradient(1200px 600px at 80% -10%, #1a2b57 0%, transparent 60%),
-        radial-gradient(900px 500px at -10% 30%, #132345 0%, transparent 60%),
-        linear-gradient(180deg, var(--bg) 0%, var(--bg-2) 100%);
-      color:var(--text); font: 16px/1.5 system-ui, -apple-system, Segoe UI, Roboto, Inter, Arial, sans-serif;
-    }
-    a{color:inherit; text-decoration:none}
-    .wrap{max-width:var(--maxw); margin:0 auto; padding:0 20px}
-    .btn{
-      display:inline-block; padding:12px 18px; border-radius:10px; font-weight:700;
-      background:linear-gradient(180deg,var(--brand),var(--brand-2));
-      color:#041024; box-shadow: var(--shadow-soft); transform:translateY(0);
-      transition:.2s ease; letter-spacing:.2px
-    }
-    .btn:hover{transform:translateY(-1px); filter:brightness(1.05)}
-    .btn.outline{
-      background:transparent; color:var(--text); border:1px solid #314264;
-      box-shadow:none
-    }
-
-    /* Header */
-    header{
-      position:sticky; top:0; z-index:50;
-      backdrop-filter: saturate(180%) blur(10px);
-      background: rgba(10,16,28,.7);
-      border-bottom:1px solid rgba(255,255,255,.06)
-    }
-    .nav{
-      display:flex; align-items:center; justify-content:space-between; padding:14px 0;
-    }
-    .brand{
-      display:flex; align-items:center; gap:10px; font-weight:800; letter-spacing:.3px
-    }
-    .brand-badge{
-      width:36px; height:36px; border-radius:9px;
-      background:linear-gradient(160deg,#7aa6ff 0%, #3f78ff 60%, #1f49ff 100%);
-      display:grid; place-items:center; box-shadow: var(--shadow);
-    }
-    .brand-badge svg{width:20px; height:20px; fill:#041024}
-    /* Logo image */
-    .logo{width:40px; height:auto; margin-right:8px}
-    nav ul{display:flex; gap:20px; list-style:none; margin:0; padding:0}
-    nav a{color:var(--text-2); font-weight:600; opacity:.9}
-    nav a:hover{opacity:1}
-    .nav-cta{display:flex; gap:10px; align-items:center}
-
-    /* Hero */
-    .hero{
-      padding:72px 0 40px;
-      position:relative;
-      background:url('Gemini_Generated_Image_3bldq73bldq73bld.png') center/cover no-repeat
-    }
-    .hero-grid{display:grid; grid-template-columns: 1.2fr .8fr; gap:30px; align-items:center}
-    .eyebrow{
-      display:inline-flex; align-items:center; gap:8px; color:var(--muted);
-      font-weight:700; letter-spacing:.28px; text-transform:uppercase; font-size:.8rem
-    }
-    .hero h1{font-size: clamp(28px, 5vw, 44px); line-height:1.1; margin:10px 0 14px}
-    .hero p{color:var(--text-2); font-size: clamp(15px, 1.8vw, 18px)}
-    .cta-row{display:flex; gap:12px; margin-top:16px; flex-wrap:wrap}
-    .hero-card{
-      background:linear-gradient(180deg, rgba(255,255,255,.04), rgba(255,255,255,.02));
-      border:1px solid rgba(255,255,255,.08);
-      padding:22px; border-radius:var(--radius); box-shadow:var(--shadow-soft)
-    }
-    .hero-card b{color:#dff2ff}
-
-    /* Hero background overlay */
-    .hero::before{
-      content:'';
-      position:absolute;
-      top:0;
-      left:0;
-      width:100%;
-      height:100%;
-      background:rgba(0,0,0,0.45);
-      z-index:0;
-    }
-    .hero .wrap{
-      position:relative;
-      z-index:1;
-    }
-
-    /* Sections */
-    section{padding:60px 0}
-    h2{font-size: clamp(22px, 4vw, 32px); line-height:1.2; margin:0 0 8px}
-    .sub{color:var(--muted); margin:0 0 22px}
-
-    /* Grid cards */
-    .grid{display:grid; gap:16px}
-    .grid.cols-3{grid-template-columns: repeat(3, 1fr)}
-    .grid.cols-4{grid-template-columns: repeat(4, 1fr)}
-    @media (max-width: 980px){
-      .hero-grid{grid-template-columns:1fr}
-      .grid.cols-4{grid-template-columns: 1fr 1fr}
-      .grid.cols-3{grid-template-columns: 1fr}
-    }
-    @media (max-width: 560px){
-      .grid.cols-4{grid-template-columns: 1fr}
-    }
-    .card{
-      background: linear-gradient(180deg, rgba(255,255,255,.03), rgba(255,255,255,.01));
-      border:1px solid rgba(255,255,255,.08);
-      padding:20px; border-radius:var(--radius);
-      box-shadow: var(--shadow-soft); height:100%
-    }
-    .card h3{margin:10px 0 6px; font-size:18px}
-    .card p{margin:0; color:var(--text-2)}
-    .icon{
-      width:40px; height:40px; border-radius:10px;
-      display:grid; place-items:center; margin-bottom:8px;
-      background:linear-gradient(160deg, #29406f, #1b2b50)
-    }
-    .icon svg{width:22px; height:22px; fill:#cfe0ff}
-
-    /* Why */
-    .why .point{display:flex; gap:14px; align-items:flex-start}
-    .why .check{
-      width:22px; height:22px; border-radius:6px; background:#143b22;
-      display:grid; place-items:center; flex:0 0 auto; margin-top:2px; border:1px solid #1f6a3a
-    }
-    .why .check svg{width:14px; height:14px; fill:var(--ok)}
-
-    /* Testimonials */
-    .tcard{display:flex; gap:14px}
-    .quote{font-size:15px; color:var(--text-2)}
-    .who{font-weight:700; margin-top:8px; color:#dbe7ff; font-size:14px}
-
-    /* Contact */
-    .contact{
-      background:
-        radial-gradient(700px 400px at 0% 100%, #1b2f5c 0%, transparent 60%),
-        linear-gradient(180deg, #0b1220 0%, #0f172a 100%);
-      border-top:1px solid rgba(255,255,255,.06);
-      border-bottom:1px solid rgba(255,255,255,.06);
-    }
-    form{
-      display:grid; gap:12px; grid-template-columns:1fr 1fr;
-      background:rgba(255,255,255,.03); padding:16px; border-radius:var(--radius);
-      border:1px solid rgba(255,255,255,.08)
-    }
-    form .full{grid-column:1 / -1}
-    label{display:block; font-weight:700; font-size:.9rem; margin-bottom:6px; color:#cfe0ff}
-    input, select, textarea{
-      width:100%; padding:12px 12px; border-radius:10px; border:1px solid #2a3b5f;
-      background:#0a1429; color:var(--text); outline:none
-    }
-    textarea{min-height:120px; resize:vertical}
-    .help{color:var(--muted); font-size:.85rem}
-
-    /* Footer */
-    footer{padding:30px 0; color:var(--muted); font-size:.9rem}
-    .foot{display:flex; align-items:center; justify-content:space-between; gap:16px; flex-wrap:wrap}
-    .mini{opacity:.9}
-
-    /* A11y / motion */
-    @media (prefers-reduced-motion: no-preference) {
-      .card, .hero-card, .btn { transition: transform .2s ease, filter .2s ease }
-      .card:hover{transform: translateY(-2px)}
-    }
-
-    /* Imagenes promocionales se han eliminado ya que el héroe usa imagen de fondo */
-  </style>
-
-  <!-- Íconos SVG reutilizables -->
-  <svg aria-hidden="true" style="position:absolute;width:0;height:0;overflow:hidden">
-    <defs>
-      <symbol id="ico-gavel" viewBox="0 0 24 24">
-        <path d="M2 21h13v2H2v-2Zm18.9-15.5-2.4-2.4a1 1 0 0 0-1.4 0l-3.8 3.8 3.8 3.8 3.8-3.8a1 1 0 0 0 0-1.4ZM11 7.3 7.3 11l3.8 3.8 3.7-3.7L11 7.3ZM5.6 12.7 2 16.3l5.7 1.4-2.1-2.1 2.1-2.1-2.1-.8Z"/>
-      </symbol>
-      <symbol id="ico-home" viewBox="0 0 24 24">
-        <path d="M12 3 2 12h3v8h6v-5h2v5h6v-8h3L12 3Z"/>
-      </symbol>
-      <symbol id="ico-scale" viewBox="0 0 24 24">
-        <path d="M12 3 7 9h10l-5-6Zm-7 9 4 6H1l4-6Zm14 0 4 6h-8l4-6ZM11 21h2v-3h-2v3Z"/>
-      </symbol>
-      <symbol id="ico-chart" viewBox="0 0 24 24">
-        <path d="M3 3h2v18H3V3Zm4 10h2v8H7v-8Zm4-6h2v14h-2V7Zm4 4h2v10h-2V11Zm4 6h2v4h-2v-4Z"/>
-      </symbol>
-      <symbol id="ico-check" viewBox="0 0 24 24">
-        <path d="M9.5 16.2 4.8 11.5l1.4-1.4 3.3 3.3 8.3-8.3 1.4 1.4-9.7 9.7Z"/>
-      </symbol>
-    </defs>
-  </svg>
-
-  <!-- Schema.org básico (ajusta cuando tengas NIT, URL y contacto reales) -->
-  <script type="application/ld+json">
-  {
-    "@context":"https://schema.org",
-    "@type":"ProfessionalService",
-    "name":"APA Agencia de Peritos &amp; Avaluadores",
-    "description":"Avalúos y dictámenes periciales con validez legal en Bogotá y La Sabana.",
-    "areaServed":"Bogotá, Colombia",
-    "priceRange":"$",
-    "sameAs":[]
-  }
-  </script>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>APA Agencia de Peritos &amp; Avaluadores | Avalúos en Bogotá y La Sabana</title>
+  <meta name="description" content="Avalúos y peritajes con precisión y confiabilidad en Bogotá, la Sabana y toda Colombia.">
+  <link rel="stylesheet" href="style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&family=Lato:wght@400;700&display=swap" rel="stylesheet">
 </head>
 <body>
-
   <!-- Header -->
-  <header aria-label="Barra de navegación">
-    <div class="wrap nav">
-      <a class="brand" href="#inicio" aria-label="Inicio">
-        <img src="Gemini_Generated_Image_sh82ygsh82ygsh82.png" alt="APA logo" class="logo" />
-        <span>APA Agencia de Peritos &amp; Avaluadores</span>
-      </a>
-      <nav aria-label="Principal">
+  <header>
+    <div class="container">
+      <a class="logo" href="index.html"><img src="Gemini_Generated_Image_sh82ygsh82ygsh82.png" alt="APA logo"><span>APA Agencia de Peritos &amp; Avaluadores</span></a>
+      <nav>
         <ul>
           <li><a href="#servicios">Servicios</a></li>
+          <li><a href="#soluciones">Soluciones</a></li>
           <li><a href="#porque">Por qué elegirnos</a></li>
-          <li><a href="#testimonios">Testimonios</a></li>
           <li><a href="blog.html">Blog</a></li>
           <li><a href="#contacto">Contacto</a></li>
         </ul>
@@ -251,246 +31,173 @@
     </div>
   </header>
 
-  <!-- Hero -->
-  <main id="inicio" class="hero">
-    <div class="wrap hero-grid">
-      <div>
-        <span class="eyebrow">Peritajes con validez legal</span>
-        <h1>Precisión y Credibilidad en Dictámenes Periciales. Tu Aliado Experto en Bogotá.</h1>
-        <p>En APA, convertimos la incertidumbre en seguridad jurídica. Nuestros avalúos y peritajes son la prueba sólida que necesitas para ganar tu caso o proteger tu patrimonio.</p>
-        <div class="cta-row">
-          <a class="btn" href="#contacto" aria-label="Solicitar cotización gratuita">Solicita una Cotización Gratis</a>
-          <a class="btn outline" href="#servicios">Ver Servicios</a>
-        </div>
-        <div class="hero-card" aria-live="polite" style="margin-top:16px">
-          <b>Respuesta en menos de 24 horas*</b><br>
-          <small class="help">*Tiempo de respuesta estimado en horario hábil. Ajusta este texto según tu operación.</small>
-        </div>
-      </div>
-      <div class="hero-card" role="note" aria-label="Resumen de valor">
-        <h3 style="margin:0 0 8px">¿Por qué APA?</h3>
-        <ul class="help" style="margin:0; padding-left:18px">
-          <li>Metodología rigurosa y trazable</li>
-          <li>Informes claros y listos para estrados</li>
-          <li>Experiencia local en Bogotá y La Sabana</li>
-        </ul>
-      </div>
-    </div>
-  </main>
-
-  <!-- Imagen de fondo integrada en la sección hero; la sección de imágenes se eliminó -->
-
-  <!-- Servicios -->
-  <section id="servicios" aria-labelledby="tit-servicios">
-    <div class="wrap">
-      <h2 id="tit-servicios">Servicios de Valoración y Avalúos</h2>
-      <p class="sub">Ofrecemos soluciones periciales especializadas para cada tipo de bien.</p>
-
-      <div class="grid cols-3">
-        <article class="card" aria-label="Valoración de Inmuebles Urbanos">
-          <div class="icon"><svg><use href="#ico-home"></use></svg></div>
-          <h3>Valoración de Inmuebles Urbanos</h3>
-          <p>Avaluamos casas, apartamentos, oficinas, locales comerciales y bodegas en zonas urbanas, determinando su valor comercial de acuerdo con el RAA.</p>
-        </article>
-
-        <article class="card" aria-label="Valoración de Inmuebles Rurales">
-          <div class="icon"><svg><use href="#ico-gavel"></use></svg></div>
-          <h3>Valoración de Inmuebles Rurales</h3>
-          <p>Avaluamos fincas, terrenos agrícolas y predios rurales con o sin construcciones —casas de campo, establos, sistemas de riego— conforme a la categoría de inmuebles rurales.</p>
-        </article>
-
-        <article class="card" aria-label="Valoración de Inmuebles Especiales">
-          <div class="icon"><svg><use href="#ico-scale"></use></svg></div>
-          <h3>Valoración de Inmuebles Especiales</h3>
-          <p>Avaluamos hoteles, clínicas, centros comerciales, colegios, hospitales y otros inmuebles especiales que no encajan en las categorías urbanas o rurales.</p>
-        </article>
-
-        <article class="card" aria-label="Valoración de Maquinaria y Equipos Fijos">
-          <div class="icon"><svg><use href="#ico-chart"></use></svg></div>
-          <h3>Valoración de Maquinaria y Equipos Fijos</h3>
-          <p>Avaluamos maquinaria industrial fija, equipos eléctricos y mecánicos, así como maquinaria móvil utilizada en construcción, movimientos de tierra o transporte, siguiendo los criterios del RAA.</p>
-        </article>
-
-        <article class="card" aria-label="Valoración de Daños y Perjuicios">
-          <div class="icon"><svg><use href="#ico-gavel"></use></svg></div>
-          <h3>Valoración de Daños y Perjuicios</h3>
-          <p>Estimamos el valor de los daños emergentes, el lucro cesante y el daño moral para procesos de reparación, apoyándonos en la categoría de intangibles especiales.</p>
-        </article>
-
-        <article class="card" aria-label="Avalúos Comerciales para Compra o Venta">
-          <div class="icon"><svg><use href="#ico-chart"></use></svg></div>
-          <h3>Avalúos Comerciales para Compra o Venta</h3>
-          <p>Avaluamos su propiedad con precisión y transparencia, basándonos en comparaciones de mercado para acompañar decisiones de compra o venta.</p>
-        </article>
+  <!-- Hero Section -->
+  <section class="hero">
+    <div class="container">
+      <h1>Avalúos Precisos y Confiables para sus Procesos Legales y Financieros</h1>
+      <p>Peritajes expertos en Bogotá y La Sabana con validez legal garantizada.</p>
+      <div class="cta-row">
+        <a href="#contacto" class="btn">Solicita una Cotización Gratis</a>
+        <a href="#servicios" class="btn outline">Ver Servicios</a>
       </div>
     </div>
   </section>
 
-  <!-- Categorías del RAA -->
-  <section id="categorias" aria-labelledby="tit-categorias">
-    <div class="wrap">
-      <h2 id="tit-categorias">Categorías del Registro Abierto de Avaluadores</h2>
-      <p class="sub">Conoce las principales categorías y alcances del RAA.</p>
-      <div class="grid cols-2">
-        <div class="card">
-          <h3>Inmuebles Urbanos</h3>
-          <p>Casas, apartamentos, oficinas, locales comerciales, bodegas y lotes urbanizados.</p>
+  <!-- Servicios -->
+  <section id="servicios" class="section">
+    <div class="container">
+      <h2>Servicios de Valoración y Avalúos</h2>
+      <p class="sub">Ofrecemos soluciones periciales especializadas para cada tipo de bien.</p>
+      <div class="services-grid">
+        <div class="service-card">
+          <h3>Valoración de Inmuebles Urbanos</h3>
+          <p>Avaluamos casas, apartamentos, oficinas, locales comerciales y bodegas en zonas urbanas, determinando su valor comercial de acuerdo con el RAA.</p>
         </div>
-        <div class="card">
-          <h3>Inmuebles Rurales</h3>
-          <p>Fincas y terrenos agrícolas con o sin construcciones como casas de campo, establos o sistemas de riego.</p>
+        <div class="service-card">
+          <h3>Valoración de Inmuebles Rurales</h3>
+          <p>Avaluamos fincas, terrenos agrícolas y predios rurales con o sin construcciones —casas de campo, establos, sistemas de riego— conforme a la categoría de inmuebles rurales.</p>
         </div>
-        <div class="card">
-          <h3>Inmuebles Especiales</h3>
-          <p>Centros comerciales, hoteles, colegios, hospitales y otros inmuebles especiales.</p>
+        <div class="service-card">
+          <h3>Valoración de Inmuebles Especiales</h3>
+          <p>Avaluamos hoteles, clínicas, centros comerciales, colegios, hospitales y otros inmuebles especiales que no encajan en las categorías urbanas o rurales.</p>
         </div>
-        <div class="card">
-          <h3>Maquinaria y Equipos Fijos</h3>
-          <p>Maquinaria industrial, equipos eléctricos y mecánicos, y maquinaria móvil de construcción y transporte.</p>
+        <div class="service-card">
+          <h3>Valoración de Maquinaria y Equipos Fijos</h3>
+          <p>Avaluamos maquinaria industrial fija, equipos eléctricos y mecánicos, así como maquinaria móvil utilizada en construcción, movimientos de tierra o transporte, siguiendo los criterios del RAA.</p>
         </div>
-        <div class="card">
-          <h3>Daños y Perjuicios</h3>
-          <p>Determinación del valor del daño emergente, lucro cesante y daño moral.</p>
+        <div class="service-card">
+          <h3>Valoración de Daños y Perjuicios</h3>
+          <p>Estimamos el valor de los daños emergentes, el lucro cesante y el daño moral para procesos de reparación, apoyándonos en la categoría de intangibles especiales.</p>
+        </div>
+        <div class="service-card">
+          <h3>Avalúos Comerciales para Compra o Venta</h3>
+          <p>Avaluamos su propiedad con precisión y transparencia, basándonos en comparaciones de mercado para acompañar decisiones de compra o venta.</p>
         </div>
       </div>
-      <p class="help" style="margin-top:20px">El RAA es un protocolo de registro único a cargo de las entidades de autorregulación de avaluadores; cada avaluador debe inscribirse en la categoría que corresponda al bien que valore.</p>
+    </div>
+  </section>
+
+  <!-- Soluciones -->
+  <section id="soluciones" class="section dark">
+    <div class="container">
+      <h2>Soluciones para Usted</h2>
+      <p class="sub">Nuestros servicios se adaptan a sus necesidades específicas.</p>
+      <div class="solutions-grid">
+        <div class="solution-card">
+          <h3>Para Abogados</h3>
+          <p>Optimice sus casos con peritajes robustos y sustentados.</p>
+          <a href="abogados.html" class="btn outline">Saber más</a>
+        </div>
+        <div class="solution-card">
+          <h3>Para Empresas</h3>
+          <p>Asegure el cumplimiento de normas NIIF y tome decisiones financieras informadas.</p>
+          <a href="empresas.html" class="btn outline">Saber más</a>
+        </div>
+        <div class="solution-card">
+          <h3>Para Personas</h3>
+          <p>Obtenga el valor real de su patrimonio para compra, venta o trámites.</p>
+          <a href="personas.html" class="btn outline">Saber más</a>
+        </div>
+      </div>
     </div>
   </section>
 
   <!-- Por qué elegirnos -->
-  <section id="porque" class="why" aria-labelledby="tit-porque">
-    <div class="wrap">
-      <h2 id="tit-porque">Precisión. Confianza. Estrategia.</h2>
-      <p class="sub">Bases técnicas sólidas y comunicación clara en cada caso.</p>
-
-      <div class="grid cols-3">
-        <div class="card">
-          <div class="point">
-            <div class="check"><svg><use href="#ico-check"></use></svg></div>
-            <div>
-              <h3 style="margin:0 0 6px">Experiencia Verificada</h3>
-              <p>Más de 10 años de experiencia en el mercado de Bogotá y La Sabana, con un historial comprobado de dictámenes aceptados por la justicia colombiana.</p>
-            </div>
-          </div>
+  <section id="porque" class="section">
+    <div class="container">
+      <h2>Por qué elegirnos</h2>
+      <p class="sub">Precisión. Confianza. Estrategia.</p>
+      <div class="cards-grid">
+        <div class="why-card">
+          <h3>Más de 15 años de experiencia</h3>
+          <p>Nuestro equipo cuenta con más de una década y media en el mercado de Bogotá y la Sabana, desarrollando informes periciales que cumplen con los más altos estándares de la justicia colombiana.</p>
         </div>
-        <div class="card">
-          <div class="point">
-            <div class="check"><svg><use href="#ico-check"></use></svg></div>
-            <div>
-              <h3 style="margin:0 0 6px">Metodología Rigurosa</h3>
-              <p>Nuestra metodología se basa en análisis de datos, regulaciones y condiciones de mercado, garantizando la exactitud de cada informe.</p>
-            </div>
-          </div>
+        <div class="why-card">
+          <h3>Metodología rigurosa</h3>
+          <p>Aplicamos métodos técnicos basados en datos, normativa y condiciones de mercado, garantizando informes claros y listos para estrados judiciales.</p>
         </div>
-        <div class="card">
-          <div class="point">
-            <div class="check"><svg><use href="#ico-check"></use></svg></div>
-            <div>
-              <h3 style="margin:0 0 6px">Atención Personalizada</h3>
-              <p>Entendemos que cada caso es único. Ofrecemos comunicación clara y constante, explicando cada etapa del proceso de peritaje.</p>
-            </div>
-          </div>
+        <div class="why-card">
+          <h3>Cientos de clientes satisfechos</h3>
+          <p>Hemos brindado soluciones a profesionales y particulares que confían en nuestros peritajes para proteger su patrimonio y tomar decisiones informadas.</p>
         </div>
       </div>
     </div>
   </section>
 
   <!-- Testimonios -->
-  <section id="testimonios" aria-labelledby="tit-testimonios">
-    <div class="wrap">
-      <h2 id="tit-testimonios">La voz de nuestros clientes</h2>
+  <section id="testimonios" class="section dark">
+    <div class="container">
+      <h2>La voz de nuestros clientes</h2>
       <p class="sub">Resultados que generan confianza.</p>
-
-      <div class="grid cols-3">
-        <div class="card tcard">
-          <div class="icon" aria-hidden="true"><svg><use href="#ico-gavel"></use></svg></div>
-          <div>
-            <p class="quote">"Gracias a su dictamen, logramos un acuerdo justo en un caso de sucesión familiar. Su profesionalismo es impecable."</p>
-            <div class="who">— Laura G., Abogada</div>
-          </div>
+      <div class="testimonials-grid">
+        <div class="testimonial-card">
+          <p>"Gracias a su dictamen, logramos un acuerdo justo en un caso de sucesión familiar. Su profesionalismo es impecable."</p>
+          <p><strong>Laura G., Abogada</strong></p>
         </div>
-
-        <div class="card tcard">
-          <div class="icon" aria-hidden="true"><svg><use href="#ico-home"></use></svg></div>
-          <div>
-            <p class="quote">"Estaba muy nerviosa por mi caso de divorcio. El equipo de APA me dio la tranquilidad de saber que el valor de mi casa era el correcto."</p>
-            <div class="who">— Camila R., Cliente</div>
-          </div>
+        <div class="testimonial-card">
+          <p>"Estaba muy nerviosa por mi caso de divorcio. El equipo de APA me dio la tranquilidad de saber que el valor de mi casa era el correcto."</p>
+          <p><strong>Camila R., Cliente</strong></p>
         </div>
-
-        <div class="card tcard">
-          <div class="icon" aria-hidden="true"><svg><use href="#ico-scale"></use></svg></div>
-          <div>
-            <p class="quote">"El informe fue tan sólido que mi cliente obtuvo el valor justo en su proceso de expropiación. Un aliado invaluable."</p>
-            <div class="who">— Ricardo M., Abogado Litigante</div>
-          </div>
+        <div class="testimonial-card">
+          <p>"El informe fue tan sólido que mi cliente obtuvo el valor justo en su proceso de expropiación. Un aliado invaluable."</p>
+          <p><strong>Ricardo M., Abogado Litigante</strong></p>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- Marco Normativo -->
-  <section id="normativa" aria-labelledby="tit-normativa">
-    <div class="wrap">
-      <h2 id="tit-normativa">Marco Normativo</h2>
-      <div class="grid cols-2">
-        <div class="card">
+  <!-- Normativa -->
+  <section id="normativa" class="section">
+    <div class="container">
+      <h2>Marco Normativo</h2>
+      <div class="normativa-grid">
+        <div class="why-card">
           <h3>Ley 1673 de 2013</h3>
           <p>Esta ley regula la actividad de los avaluadores en Colombia y tiene como objetivo asegurar la calidad y la transparencia de los avalúos. Exige que los avaluadores estén registrados y autorizados, cumplan requisitos de educación y experiencia y observen normas éticas como independencia, imparcialidad y confidencialidad. Además, establece que los profesionales deben inspeccionar físicamente el bien y aplicar métodos adecuados en sus informes, e impone sanciones a quienes incumplen las normas.</p>
         </div>
-        <div class="card">
+        <div class="why-card">
           <h3>Resolución 620 de 2008 (IGAC)</h3>
-          <p>La Resolución 620 de 2008 del IGAC define los procedimientos para los avalúos ordenados dentro del marco de la Ley 388. Establece cuatro métodos valuatorios: el <strong>método de comparación o de mercado</strong>, que estima el valor comercial a partir de ofertas y transacciones similares; el <strong>método de capitalización de rentas</strong>, que convierte las rentas o ingresos esperados en valor presente; el <strong>método de costo de reposición</strong>, que calcula el costo de reconstrucción y descuenta la depreciación; y el <strong>método residual</strong>, que determina el valor del terreno a partir de las ventas proyectadas menos costos y utilidades. La resolución también establece etapas para la elaboración de avalúos, que incluyen verificar la documentación, obtener información adicional, revisar la reglamentación urbanística vigente y reconocer el bien en terreno.</p>
+          <p>La Resolución 620 de 2008 del IGAC define los procedimientos para los avalúos ordenados dentro del marco de la Ley 388. Establece cuatro métodos valuatorios: el <strong>método de comparación o de mercado</strong>, que estima el valor comercial a partir de ofertas y transacciones similares; el <strong>método de capitalización de rentas</strong>, que convierte las rentas o ingresos esperados en valor presente; el <strong>método de costo de reposición</strong>, que calcula el costo de reconstrucción y descuenta la depreciación; y el <strong>método residual</strong>, que determina el valor del terreno a partir de las ventas proyectadas menos costos y utilidades. También establece etapas para la elaboración de avalúos, como verificar la documentación, obtener información adicional, revisar la reglamentación urbanística vigente y reconocer el bien en terreno.</p>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- CTA Final + Contacto -->
-  <section id="contacto" class="contact" aria-labelledby="tit-cta">
-    <div class="wrap">
-      <h2 id="tit-cta">¿Necesitas un Peritaje o Avalúo con Validez Legal?</h2>
-      <p class="sub">No dejes el valor de tu caso al azar. Contáctanos hoy para una consulta y descubre cómo podemos ayudarte a asegurar tu patrimonio.</p>
-
-      <div class="grid" style="grid-template-columns:1.1fr .9fr; gap:20px">
-        <div class="card">
-          <!-- Contacto vía WhatsApp -->
+  <!-- Contacto -->
+  <section id="contacto" class="contact-section">
+    <div class="container">
+      <h2>¿Necesitas un Peritaje o Avalúo con Validez Legal?</h2>
+      <div class="grid">
+        <div class="contact-card">
           <p>Estamos disponibles en <strong>WhatsApp</strong> para responder tus preguntas y ayudarte con tus avalúos y dictámenes periciales.</p>
           <a class="btn" href="https://wa.me/573003499610" target="_blank" rel="noopener">Escríbenos por WhatsApp</a>
         </div>
-
-        <aside class="card">
-          <h3 style="margin:0 0 8px">Información rápida</h3>
-          <ul class="help" style="margin:0 0 10px; padding-left:18px">
+        <div class="contact-card">
+          <h3>Información rápida</h3>
+          <ul>
             <li>Cobertura: Bogotá y La Sabana</li>
             <li>Horarios hábiles de atención</li>
             <li>Informes con trazabilidad y anexos</li>
             <li>WhatsApp: +57 300&nbsp;349&nbsp;9610</li>
           </ul>
-          <a class="btn" href="https://wa.me/573003499610" target="_blank" rel="noopener">Escríbenos por WhatsApp</a>
-        </aside>
+          <a class="btn outline" href="https://wa.me/573003499610" target="_blank" rel="noopener">Escríbenos por WhatsApp</a>
+        </div>
       </div>
     </div>
   </section>
 
-  <footer role="contentinfo">
-    <div class="wrap foot">
-      <div class="mini">© <span id="y"></span> APA Agencia de Peritos &amp; Avaluadores. Todos los derechos reservados.</div>
-      <div class="mini">Bogotá, Colombia</div>
-    </div>
+  <!-- Footer -->
+  <footer class="footer">
+    © <span id="year"></span> APA Agencia de Peritos &amp; Avaluadores. Todos los derechos reservados.
   </footer>
 
   <script>
-    // año dinámico
-    document.getElementById('y').textContent = new Date().getFullYear();
-
-    // mejora foco/scroll en anclas para accesibilidad
-    document.querySelectorAll('a[href^="#"]').forEach(a=>{
-      a.addEventListener('click', e=>{
-        const id = a.getAttribute('href').slice(1);
-        const el = document.getElementById(id);
-        if(el){ e.preventDefault(); el.setAttribute('tabindex','-1'); el.focus({preventScroll:true}); el.scrollIntoView({behavior:'smooth', block:'start'}); }
-      });
+    // Set dynamic year
+    document.addEventListener('DOMContentLoaded', () => {
+      const yearSpan = document.getElementById('year');
+      if (yearSpan) {
+        yearSpan.textContent = new Date().getFullYear();
+      }
     });
   </script>
 </body>
